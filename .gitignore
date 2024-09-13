@@ -2,3 +2,5 @@
 /kicad/*-cache.lib 
 /kicad/*-bak
 /kicad/gerbers/*
+/kicad/MHzDisplayBlaster-backups/*
+/kicad/_autosave-MHzDisplayBlaster.sch
