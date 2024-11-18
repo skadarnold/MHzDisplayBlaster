@@ -1,23 +1,14 @@
-# MHz Display Blaster
+# ST-6A Blaster
 
-A clone of the TD-37S 2-digit MHz display that was common in 386/486 PC cases.
-It can display a Turbo and a non-Turbo number, depending on the state of the Turbo switch.
-It also drives the Turbo LED accordingly.
+This is a fork of the MHzDisplayBlaster by Scrap Computing
+https://github.com/scrapcomputing/MHzDisplayBlaster
 
-<img src="img/MHzDisplayBlaster_assembled.jpg" width=360>
-<img src="img/MHzDisplayBlaster_PCB_front.jpg" width=240>
-<img src="img/MHzDisplayBlaster_PCB_back.jpg" width=240>
+It has been reworked to clone a ST-6A style display board, particularly designed for a Baby AT style case. This case badged as a Gecco was likely the name of the company that built the computer and not the case. This display board is not a perfect match to a ST-6A display, but was the closest I could identify to the style. It will likely need to be modified for your particular case use.
 
 # Assembly Tips
+This video shows assembly of the original MHzDisplayBlaster, which is a similar build process.
 - Video showing the assembly of rev.0.1 PCB: https://www.youtube.com/watch?v=a4iVehn7APU
-> **Warning**
-> Please solder the single-row header and the resistor *before* you solder the 7-segment display
-
-# Connecting the board to the PC
-- Power: The display is powered by providing 5V to the `+` pin of J4 and GND to the `-` pin.
-- Turbo Switch: The turbo switch is a 3-pin 2-way switch. Connect the common wire (middle) to `CM`, the Turbo-ON wire to `T` and the Turbo-OFF wire to `N` (J4).
-- Turbo LED: The turbo LED is connected to `L` and `P` on J4. `P` is the positive.
-
+ 
 # Display Configuration
 - Each segment of the 7-segment display is configured individually with a jumper
 - Each segment corresponds to a pin in the configuration headers
@@ -29,27 +20,16 @@ It also drives the Turbo LED accordingly.
 
 <img src='img/configuration.png' width=480>
 
-> **Note**
-> Please note that the PCB is often mounted up side down on the case.
-
-- For a simple tutorial on how to set it up please refer to the video: https://www.youtube.com/watch?v=wNkg-e47Ex8
-- [More resources on MHz Displays](https://www.minuszerodegrees.net/led_speed_display/led_speed_display.htm)
-
-
-
-
 # Bill of materials
 
-Gerber files are published in the releases: https://github.com/scrapcomputing/MHzDisplayBlaster/releases
+Gerber files are published in the releases: https://github.com/skadarnold/MHzDisplayBlaster/releases
 
 Reference      | Quantity| Value    | Footprint/Comments
 ---------------|---------|----------|----------
-U1             | 1       |(e.g., LTD-6440G) | 18-DIP (0.600", 15.24mm distance between top and bottom row pins) 2-Digit 7-Segment Display Common Cathode 0.56" Green
+U1             | 1       |(e.g., LTD-6440G) | 18-DIP (0.600", 15.24mm distance between top and bottom row pins) 2-Digit 7-Segment Display Common Cathode 0.56" Red
 J1 J2          | 2       |Conn_02x15| Connector Male PinHeader 2x15 P2.54mm Vertical
 J4             | 1       |Conn_01x06| Connector Male PinHeader 1x06 P2.54mm Vertical
-R1             | 1       | >= 39 Ohm (100 Ohms recommended)| 1/4 Watt resistor. The original TD37S has a 39 Ohm resistor. But the resistor value is specific to the type of the LEDs used. The original ones operate at around 2V, so the resistor drops 3V. Higher resistor values make the display more dim, but are also better for the longevity of the LEDs in the display.
-Jumpers        | 15      |          | 2.54mm pitch jumpers
-
-# Changelist
-- Rev.0.2 : Fixes polarity issue, improves info
-- Rev.0.1 : Initial revision
+R1             | 1       | >= 39 Ohm (100 Ohms recommended)| 3.6 x 1.6mm 1/4 Watt resistor.
+R2 R3          | 2       | 330 - 1k Ohm | 3.6 x 1.6mm 1/4 Watt resistor.
+U2             | 1       | 74LS04 (	SN7404DR ) | SOIC-14
+Jumpers        | 5      |          | 2.54mm pitch jumpers
