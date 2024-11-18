@@ -2339,7 +2339,7 @@
     (property "Reference" "R3" (at 246.38 95.25 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "1K" (at 246.38 97.79 0)
+    (property "Value" "330" (at 246.38 97.79 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" (at 249.682 96.52 90)
